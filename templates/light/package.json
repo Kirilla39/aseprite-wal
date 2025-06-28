@@ -1,0 +1,16 @@
+{
+  "name": "wal-theme",
+  "displayName": "Aseprite Wal Theme",
+  "description": "Default Theme with pywal color scheme by Kirilla",
+  "version": "1.0",
+  "author": { "name": "Kirilla", "email": "kirilla39yt@gmail.com", "url": "https://github.com/kirilla39" },
+  "contributors": [],
+  "publisher": "eightyseven",
+  "license": "CC-BY-4.0",
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      { "id": "default-wal", "path": "./", "variant": "Your color scheme" }
+    ]
+  }
+}
