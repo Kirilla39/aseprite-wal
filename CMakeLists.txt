@@ -4,8 +4,14 @@ project(aseprite-wal)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(USER_CONFIG_DIR $ENV{HOME}/.config/aseprite-wal)
+
 find_package(PNG REQUIRED)
-find_package(nlohmann_json CONFIG REQUIRED)
+
+include(FetchContent)
+
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.12.0/json.tar.xz)
+FetchContent_MakeAvailable(json)
 
 add_executable(aseprite-wal
     src/main.cc
@@ -21,12 +27,12 @@ target_include_directories(aseprite-wal PRIVATE ${PNG_INCLUDE_DIRS} ${CMAKE_CURR
 install(TARGETS aseprite-wal RUNTIME DESTINATION bin)
 
 install(CODE "
-    if(NOT EXISTS \$ENV{HOME}/.config/aseprite-wal/templates/light)
-        execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory \$ENV{HOME}/.config/aseprite-wal/templates)
-        execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/templates/light \$ENV{HOME}/.config/aseprite-wal/templates/light)
+    if(NOT EXISTS ${USER_CONFIG_DIR}/templates/light)
+        execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ${USER_CONFIG_DIR}/templates/)
+        execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/templates/light ${USER_CONFIG_DIR}/templates/light)
         message(STATUS \"Template moved to ~/.config/aseprite-wal/templates/light\")
     else()
         message(STATUS \"Template already exists in config location, skipping\")
     endif()
-    execute_process(COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_SOURCE_DIR}/templates)
-")
+    message(STATUS ${USER_CONFIG_DIR}/templates/light)
+    ")

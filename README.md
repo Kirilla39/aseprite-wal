@@ -18,8 +18,7 @@ A tool to generate Aseprite themes with colorized UI from [pywal](https://github
 mkdir build
 cd build
 cmake ..
-make
-make install
+sudo make install
 ```
 
 ## Usage
