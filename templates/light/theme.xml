@@ -30,8 +30,8 @@
         <dim id="color_selector_bar_size" value="8" />
     </dimensions>
     <colors>
-        <color id="text" value="@foreground" />
-        <color id="disabled" value="bb@foreground" />
+        <color id="text" value="@color8" />
+        <color id="disabled" value="de@foreground" />
         <color id="face" value="ca@color5" />
         <color id="hot_face" value="@color4" />
         <color id="selected" value="ca@color5" />
@@ -39,13 +39,13 @@
         <color id="separator_label" value="@color4" />
         <color id="background" value="@background" />
         <color id="textbox_text" value="@foreground" />
-        <color id="textbox_face" value="@background" />
+        <color id="textbox_face" value="@color2" />
         <color id="textbox_code_face" value="@color4" />
-        <color id="entry_suffix" value="de@foreground" />
+        <color id="entry_suffix" value="77@foreground" />
         <color id="link_text" value="de@color3" />
         <color id="link_hover" value="@color3" />
         <color id="button_normal_text" value="@color2" />
-        <color id="button_hot_text" value="@foreground" />
+        <color id="button_hot_text" value="8b@foreground" />
         <color id="button_selected_text" value="@color4" />
         <color id="check_hot_face" value="fa@color5" />
         <color id="check_focus_face" value="77@color5" />
@@ -71,10 +71,10 @@
         <color id="slider_empty_text" value="@color8" />
         <color id="slider_full_text" value="@color7" />
         <color id="tab_normal_text" value="8D@color8" />
-        <color id="tab_active_text" value="@color2" />
+        <color id="tab_active_text" value="@foreground" />
         <color id="tab_active_face" value="8D@color8" />
         <color id="popup_window_border" value="@background" />
-        <color id="tooltip_text" value="@foreground" />
+        <color id="tooltip_text" value="77@color5" />
         <color id="tooltip_face" value="fa@color5" />
         <color id="filelist_even_row_text" value="@foreground" />
         <color id="filelist_even_row_face" value="aa@color8" />
